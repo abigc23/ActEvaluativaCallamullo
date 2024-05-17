@@ -2,20 +2,16 @@ let x1 = 100; // Posición inicial en x del círculo rojo
 let y1 = 300; // Posición inicial en y del círculo rojo
 let xSpeedrojo = 6; // Velocidad en el eje x del círculo rojo
 let ySpeedrojo = 6; // Velocidad en el eje y del círculo rojo
-let colorrojo;
+let colorrojo=255;
 
 let x2 = 500; // Posición inicial en x del círculo azul
 let y2 = 300; // Posición inicial en y del círculo azul
 let xSpeedazul = 3; // Velocidad de eje x del círculo azul
 let ySpeedazul = 3; // Velocidad de eje y del círculo azul
-let colorazul;
-let colorvioleta;
+let colorazul= 255;
 
 function setup() {
   createCanvas(600, 600);
-  colorazul = color(0, 0, 255); // Color azul
-  colorrojo = color(255, 0, 0);
-  colorvioleta = color(255, 0, 255);
 }
 
 function draw() {
@@ -23,11 +19,11 @@ function draw() {
   noStroke();
   
   // Círculo rojo
-  fill(colorrojo);
+  fill(colorrojo, 0, 0);
   ellipse(x1, y1, 70, 70);
   
   // Círculo azul
-  fill(colorazul);
+  fill(0, 0, colorazul);
   ellipse(x2, y2, 70, 70);
 
   // Movimiento del círculo rojo
@@ -41,7 +37,10 @@ function draw() {
   if (y1 < 35 || y1 > 565) {
     ySpeedrojo *= -1;
     if(y1 < 35){
-      colorrojo = color(random(200, 255), random(200, 255), random(200, 255));
+      colorrojo = colorrojo - 20;
+      if(colorrojo <= 120){
+        colorrojo=255;
+      }
     }
   }
   
@@ -55,9 +54,11 @@ function draw() {
   }
   if (y2 < 35 || y2 > 565) {
     ySpeedazul *= -1;
-    if(y2 > 35){
-      colorazul = color(random(0, 255), random(0, 255), random(0, 255));
+      if(y2 > 35){
+        colorazul = colorazul - 20;
+        if(colorazul <= 120){
+          colorazul=255;
+        }
     }
-    
   }
 }
