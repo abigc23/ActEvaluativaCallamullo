@@ -24,23 +24,23 @@ function draw() {
   
   // Círculo rojo
   fill(colorrojo);
-  ellipse(x1, y1, 50, 50);
+  ellipse(x1, y1, 70, 70);
   
   // Círculo azul
   fill(colorazul);
-  ellipse(x2, y2, 50, 50);
+  ellipse(x2, y2, 70, 70);
 
   // Movimiento del círculo rojo
   x1 += xSpeedrojo;
   y1 += ySpeedrojo;
   
   // Bordes para el círculo rojo
-  if (x1 < 25 || x1 > 575) {
+  if (x1 < 35 || x1 > 565) {
     xSpeedrojo *= -1;
   }
-  if (y1 < 25 || y1 > 575) {
+  if (y1 < 35 || y1 > 565) {
     ySpeedrojo *= -1;
-    if(y1 < 25){
+    if(y1 < 35){
       colorrojo = color(random(200, 255), random(200, 255), random(200, 255));
     }
   }
@@ -50,13 +50,13 @@ function draw() {
   y2 += ySpeedazul;
   
   // Bordes para el círculo azul
-  if (x2 < 25 || x2 > 575) {
+  if (x2 < 35 || x2 > 565) {
     xSpeedazul *= -1;
   }
-  if (y2 < 25 || y2 > 575) {
+  if (y2 < 35 || y2 > 565) {
     ySpeedazul *= -1;
-    if(y2 > 25){
-      colorazul = color(random(100, 255), random(100, 255), random(100, 255));
+    if(y2 > 35){
+      colorazul = color(random(0, 255), random(0, 255), random(0, 255));
     }
     
   }
